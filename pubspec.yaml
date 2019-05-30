@@ -16,7 +16,21 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+
 flutter:
   uses-material-design: true
 
+  assets:
+    - assets/images/image.jpg
+    - assets/images/foto.jpg
+    - assets/images/gargantua.jpg
+    - assets/images/cascada1.jpg
+    - assets/images/cascada2.jpg
+    - assets/images/cascada3.png
+    - assets/images/cascada4.jpg
+
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: fonts/Lato-Regular.ttf
 
