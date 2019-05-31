@@ -5,8 +5,9 @@ class Review extends StatelessWidget {
   String name = "Cristian";
   String details = "1 review 5 photos";
   String comment = "Hay un lugar agradable en popayan";
+  Color textColor;
 
-  Review(this.pathImage, this.name, this.details, this.comment);
+  Review(this.pathImage, this.name, this.details, this.comment,this.textColor);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class Review extends StatelessWidget {
       margin: EdgeInsets.only(left: 20.0),
       child: Text(name,
           textAlign: TextAlign.left,
-          style: TextStyle(fontSize: 17.0, fontFamily: "Lato")),
+          style: TextStyle(fontSize: 17.0, fontFamily: "Lato",color: textColor)),
     );
 
     final userInfo = Container(
@@ -32,7 +33,7 @@ class Review extends StatelessWidget {
       child: Text(details,
           textAlign: TextAlign.left,
           style: TextStyle(
-              fontSize: 13.0, fontFamily: "Lato", color: Color(0xffa3a5a7))),
+              fontSize: 13.0, fontFamily: "Lato", color: textColor)),
     );
 
     final userComment = Container(
@@ -40,16 +41,19 @@ class Review extends StatelessWidget {
       child: Text(comment,
           textAlign: TextAlign.left,
           style: TextStyle(
-              fontSize: 13.0, fontFamily: "Lato",fontWeight: FontWeight.bold)),
+              fontSize: 13.0, fontFamily: "Lato",fontWeight: FontWeight.bold,color: textColor)),
     );
 
-    final userDetails = Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        userName,
-        userInfo,
-        userComment
-      ],
+    final userDetails = Container(
+      alignment: Alignment(0.5, 0.5),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          userName,
+          userInfo,
+          userComment
+        ],
+      ),
     );
 
     return Row(

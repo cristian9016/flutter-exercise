@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'floating_action_button_green.dart';
 
 class CardImage extends StatelessWidget {
   String pathImage;
@@ -8,7 +9,7 @@ class CardImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final card = Container(
-      height: 350.0,
+      height: 200.0,
       width: 250.0,
       margin: EdgeInsets.only(top: 80.0, left: 20.0),
       decoration: BoxDecoration(
@@ -23,6 +24,12 @@ class CardImage extends StatelessWidget {
                 offset: Offset(0.0, 7.0))
           ]),
     );
-    return card;
+    return Stack(
+      alignment: Alignment(0.9, 1.1),
+      children: <Widget>[
+        card,
+        FloatingActionButtonGreen()
+      ],
+    );
   }
 }
